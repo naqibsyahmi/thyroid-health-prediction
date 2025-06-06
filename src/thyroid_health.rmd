@@ -615,6 +615,10 @@ However, the **low specificity** suggests **room for improvement** in detecting 
 
 - Perform threshold optimization to better balance sensitivity and specificity.
 
+## Conclusion
+
+Thyroid dysfunction has shown to be a prevalent health issue affecting a significant portion of the population. In this project, we addressed two primary questions: whether TSH levels can be accurately predicted, and whether individuals can be classified as having thyroid dysfunction using clinical and demographic features. Based on our findings, machine learning techniques show strong potential in supporting early diagnosis and clinical decision-making for thyroid health. Despite limitations such as data imbalance and missing values, the results highlight the value of predictive modeling in enhancing clinical screening. These models can help identify thyroid conditions more efficiently, reducing the wait time for lab results. Future work may focus on integrating these models into clinical workflows and validating them across larger, more diverse populations.
+
 ## References
 
 1. Taylor, P. N., Albrecht, D., Scholz, A., Gutierrez-Buey, G., Lazarus, J. H., Dayan, C. M., & Okosieme, O. (2018). Global epidemiology of hyperthyroidism and hypothyroidism. Nature Reviews Endocrinology, 14(5), 301–316. https://doi.org/10.1038/nrendo.2018.18.
