@@ -1,6 +1,6 @@
 # 🏥 🦠 Prediction of Thyroid Hormone Levels and Diagnosis of Thyroid Disorders
 
-## 📝 Introduction
+## 📝 Project Introduction
 
 Thyroid disorders, including **hypothyroidism** and **hyperthyrodism**, are **prevalent endocrine conditions** that can significantly impact **metabolic health**. Globally, the **incidence of thyroid dysfunction** is increasing, with studies indicating that thyroid disorders affect a substantial portion of the population [1]. **Thyroid-stimulating hormone (TSH)**, produced by the pituitary gland, plays a pivotal role in regulating thyroid function and is a primary marker for assessing thyroid health [2].
 
