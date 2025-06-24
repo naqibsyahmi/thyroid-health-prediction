@@ -2,8 +2,7 @@
 output:
   pdf_document:
     latex_engine: pdflatex
-output_file: "../output/thyroid_health_report.pdf"
-  
+  html_document: default
 header-includes:
   - \usepackage{booktabs}
   - \usepackage[table]{xcolor}
@@ -14,58 +13,66 @@ header-includes:
   - \titleformat{\subsection}{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
 ---
 
-\begin{center}
-\includegraphics[width=0.75\textwidth]{../images/um-logo.png}
-\end{center}
+```{r, echo=FALSE, results='asis'}
+if (knitr::is_html_output()) {
+  cat("<center><img src='../images/um-logo.png' width='75%'></center>\n")
+  cat("<center><h2><strong>FACULTY OF COMPUTER SCIENCE & INFORMATION TECHNOLOGY</strong></h2></center>\n")
+  cat("<center><h2><strong>WQD 7004 – Programming for Data Science</strong></h2></center>\n")
+  cat("<center><h2><strong>SEMESTER 2, 2024/2025</strong></h2></center>\n")
+  cat("<center><h2><strong>Group Project</strong></h2></center>\n")
+  cat("<center><h2><strong>Project Title: Prediction of Thyroid Hormone Levels and Diagnosis of Thyroid Disorders</strong></h2></center>\n")
+  cat("<center><h3><strong>Group Members:</strong></h3></center>\n")
 
-\begin{center}
-\Large \textbf{FACULTY OF COMPUTER SCIENCE \& INFORMATION TECHNOLOGY}
-\end{center}
+  cat("<center>
+  <table style='border-collapse: collapse; width: 70%;'>
+    <thead>
+      <tr style='background-color:#D3D3D3;'>
+        <th style='padding: 8px; border: 1px solid #ddd;'>No.</th>
+        <th style='padding: 8px; border: 1px solid #ddd;'>Name</th>
+        <th style='padding: 8px; border: 1px solid #ddd;'>Matric Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style='padding: 8px; border: 1px solid #ddd;'>1</td><td style='padding: 8px; border: 1px solid #ddd;'>MUHAMMAD NAQIB SYAHMI BIN AB RAZAK</td><td style='padding: 8px; border: 1px solid #ddd;'>23073950</td></tr>
+      <tr><td style='padding: 8px; border: 1px solid #ddd;'>2</td><td style='padding: 8px; border: 1px solid #ddd;'>MD TIPU SULTAN</td><td style='padding: 8px; border: 1px solid #ddd;'>24072590</td></tr>
+      <tr><td style='padding: 8px; border: 1px solid #ddd;'>3</td><td style='padding: 8px; border: 1px solid #ddd;'>AIEDYL DAVA AKBARI</td><td style='padding: 8px; border: 1px solid #ddd;'>23070275</td></tr>
+      <tr><td style='padding: 8px; border: 1px solid #ddd;'>4</td><td style='padding: 8px; border: 1px solid #ddd;'>TANISYA PRISTI AZRELIA</td><td style='padding: 8px; border: 1px solid #ddd;'>24088031</td></tr>
+      <tr><td style='padding: 8px; border: 1px solid #ddd;'>5</td><td style='padding: 8px; border: 1px solid #ddd;'>MARINA A/P MANIDAR</td><td style='padding: 8px; border: 1px solid #ddd;'>24075325</td></tr>
+    </tbody>
+  </table>
+  </center>\n")
 
-\begin{center}
-\Large \textbf{WQD 7004 – Programming for Data Science}
-\end{center}
-
-\begin{center}
-\Large \textbf{SEMESTER 2, 2024/2025}
-\end{center}
-
-\begin{center}
-\Large \textbf{Group Project}
-\end{center}
-
-\begin{center}
-\Large \textbf{Project Title: Prediction of Thyroid Hormone Levels and Diagnosis of Thyroid Disorders}
-\end{center}
-
-\begin{center}
-\Large \textbf{Group Members:}
-\end{center}
-
-\begin{center}
-\large
-\begin{tabular}{|c|c|c|}
-\hline
-\rowcolor{gray!30}
-\textbf{No.} & \textbf{Name} & \textbf{Matric Number} \\
-\hline
-1. & MUHAMMAD NAQIB SYAHMI BIN AB RAZAK & 23073950 \\
-\hline
-2. & MD TIPU SULTAN                     & 24072590 \\
-\hline
-3. & AIEDYL DAVA AKBARI                 & 23070275 \\
-\hline
-4. & TANISYA PRISTI AZRELIA             & 24088031 \\
-\hline
-5. & MARINA A/P MANIDAR                 & 24075325 \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\Large \textbf{Supervised by: Dr. Ong Sim Ying}
-\end{center}
-
+  cat("<center><h3><strong>Supervised by: Dr. Lim Chee Kau</strong></h3></center>\n")
+} else {
+  cat("\\begin{center}\\includegraphics[width=0.75\\textwidth]{../images/um-logo.png}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{FACULTY OF COMPUTER SCIENCE \\& INFORMATION TECHNOLOGY}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{WQD 7004 – Programming for Data Science}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{SEMESTER 2, 2024/2025}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{Group Project}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{Project Title: Prediction of Thyroid Hormone Levels and Diagnosis of Thyroid Disorders}\\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{Group Members:}\\end{center}\n")
+  cat("\\begin{center}
+  \\large
+  \\begin{tabular}{|c|c|c|}
+  \\hline
+  \\rowcolor{gray!30}
+  \\textbf{No.} & \\textbf{Name} & \\textbf{Matric Number} \\\\
+  \\hline
+  1. & MUHAMMAD NAQIB SYAHMI BIN AB RAZAK  & 23073950 \\\\
+  \\hline
+  2. & MD TIPU SULTAN                     & 24072590 \\\\
+  \\hline
+  3. & AIEDYL DAVA AKBARI                 & 23070275 \\\\
+  \\hline
+  4. & TANISYA PRISTI AZRELIA             & 24088031 \\\\
+  \\hline
+  5. & MARINA A/P MANIDAR                 & 24075325 \\\\
+  \\hline
+  \\end{tabular}
+  \\end{center}\n")
+  cat("\\begin{center}\\Large \\textbf{Supervised by: Dr. Lim Chee Kau}\\end{center}\n")
+}
+```
 \newpage
 
 \tableofcontents
@@ -234,16 +241,16 @@ na_counts <- data.frame(
 print(na_counts)
 
 # Impute missing numeric values using the column mean
-thyroid_data_df$age[is.na(thyroid_data_df$age)] <- mean(thyroid_data_df$age,
+thyroid_data_df$age[is.na(thyroid_data_df$age)] <- mean(thyroid_data_df$age, 
                                                         na.rm = TRUE)
-thyroid_data_df$sex[is.na(thyroid_data_df$sex)] <- mean(thyroid_data_df$sex,
+thyroid_data_df$sex[is.na(thyroid_data_df$sex)] <- mean(thyroid_data_df$sex, 
                                                         na.rm = TRUE)
 
 # Impute missing numeric values using the column mean
 cols_to_impute <- c("TSH", "T3", "TT4", "T4U", "FTI")
 
 # Mean imputation
-thyroid_data_df <- thyroid_data_df %>%
+thyroid_data_df <- thyroid_data_df %>% 
   mutate(across(all_of(cols_to_impute), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
 
 # Replace data points '?' with NA
@@ -293,7 +300,6 @@ text(x = bar_positions,
      pos = 3,
      cex = 0.8)
 
-
 # Scatterplot between Age and TSH levels
 plot(thyroid_data_df$age, thyroid_data_df$TSH,
      main = "Scatterplot of Age vs TSH",
@@ -306,7 +312,7 @@ abline(lm(TSH ~ age, data = thyroid_data_df), col = "red", lwd = 2)
 correlation <- cor(thyroid_data_df$age, thyroid_data_df$TSH, use = "complete.obs")
 cat("The correlation between Age and TSH is: ", round(correlation, 3), "\n")
 
-# Heatmap of Thyroid-Related Features
+# Correlation Matrix of Thyroid-Related Features
 selected_cols <- c("age", "sex", "FTI", "T3", "TT4", "TSH", "binaryClass")
 subset_data <- thyroid_data_df[, selected_cols]
 
@@ -362,7 +368,7 @@ thyroid_regress_test_data <- rf_thyroid_data[-sample_index, ]
 # Random Forest - Training
 library(randomForest)
 
-rf_model <- randomForest(TSH ~ ., data = thyroid_regress_train_data,
+rf_model <- randomForest(TSH ~ ., data = thyroid_regress_train_data, 
                          ntree = 100, importance = TRUE)
 rf_preds_regress_train <- predict(rf_model, thyroid_regress_train_data)
 rf_preds_regress_test <- predict(rf_model, thyroid_regress_test_data)
@@ -615,9 +621,11 @@ However, the **low specificity** suggests **room for improvement** in detecting 
 
 - Perform threshold optimization to better balance sensitivity and specificity.
 
+
 ## Conclusion
 
 Thyroid dysfunction has shown to be a prevalent health issue affecting a significant portion of the population. In this project, we addressed two primary questions: whether TSH levels can be accurately predicted, and whether individuals can be classified as having thyroid dysfunction using clinical and demographic features. Based on our findings, machine learning techniques show strong potential in supporting early diagnosis and clinical decision-making for thyroid health. Despite limitations such as data imbalance and missing values, the results highlight the value of predictive modeling in enhancing clinical screening. These models can help identify thyroid conditions more efficiently, reducing the wait time for lab results. Future work may focus on integrating these models into clinical workflows and validating them across larger, more diverse populations.
+
 
 ## References
 
